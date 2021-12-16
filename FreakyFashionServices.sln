@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreakyFashionServices.StockService", "FreakyFashionServices.StockService\FreakyFashionServices.StockService.csproj", "{8EBF8114-7ADB-4B36-A3EB-9F61B02F1176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreakyFashionServices.CatalogService", "FreakyFashionServices.CatalogService\FreakyFashionServices.CatalogService.csproj", "{2D091D41-A52B-4903-B982-C796D4C90B13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EBF8114-7ADB-4B36-A3EB-9F61B02F1176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBF8114-7ADB-4B36-A3EB-9F61B02F1176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBF8114-7ADB-4B36-A3EB-9F61B02F1176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBF8114-7ADB-4B36-A3EB-9F61B02F1176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D091D41-A52B-4903-B982-C796D4C90B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D091D41-A52B-4903-B982-C796D4C90B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D091D41-A52B-4903-B982-C796D4C90B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D091D41-A52B-4903-B982-C796D4C90B13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {842B9A38-E71A-4BB1-9BDF-C4AD7D8B1B80}
+	EndGlobalSection
+EndGlobal
