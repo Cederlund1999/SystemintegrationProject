@@ -18,41 +18,22 @@ namespace FreakyFashionServices.CatalogService.Controllers
         private CatalogServiceContext Context { get; }
 
         [HttpPost]
-        public IActionResult UpdateProducts( UpdateProductDTO updateProductDto)
+        public IActionResult UpdateProducts(UpdateProductDTO updateProductDto)
         {
             var products = new Product(
                   updateProductDto.Id,
                   updateProductDto.Name,
                   updateProductDto.Description,
-                  updateProductDto.UrlSlug,
+                  updateProductDto.ImageUrl,
                   updateProductDto.Price,
-                  updateProductDto.ImageUrl
+                  updateProductDto.UrlSlug
                     );
             Context.Product.Add(products);
             Context.SaveChanges();
-            return NoContent();
+            return Created("",products);
 
-
-            /*var products = Context.Product.FirstOrDefault(x => x.Id == updateProductDto.Id);
-            if(products == null)
-            {
-                products = new Product(
-                  updateProductDto.Id,
-                  updateProductDto.Name,
-                  updateProductDto.Description,
-                  updateProductDto.UrlSlug,
-                  updateProductDto.Price,
-                  updateProductDto.ImageUrl
-                    );
-                Context.Product.Add(products);
-            }
-            else
-            {
-                products.Name = updateProductDto.Name;
-            }
-            Context.SaveChanges();
-            return NoContent();*/
         }
+    
 
         [HttpGet]
         public IEnumerable<ProductsDto> GetAll()

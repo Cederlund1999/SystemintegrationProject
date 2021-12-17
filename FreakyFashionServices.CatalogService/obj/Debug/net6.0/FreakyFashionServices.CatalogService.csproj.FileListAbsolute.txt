@@ -259,3 +259,4 @@ C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.CatalogSe
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.CatalogService\obj\Debug\net6.0\ref\FreakyFashionServices.CatalogService.dll
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.CatalogService\obj\Debug\net6.0\FreakyFashionServices.CatalogService.pdb
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.CatalogService\obj\Debug\net6.0\FreakyFashionServices.CatalogService.genruntimeconfig.cache
+C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.CatalogService\obj\Debug\net6.0\FreakyFashionServices.CatalogService.csproj.AssemblyReference.cache
