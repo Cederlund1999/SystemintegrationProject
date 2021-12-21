@@ -20,7 +20,12 @@
       "ProjectGuid": "2d091d41-a52b-4903-b982-c796d4c90b13",
       "DisplayName": "FreakyFashionServices.CatalogService",
       "ColorIndex": 2
+    },
+    "2f419a97-a1cc-43a7-ac1f-ce7bdc7e9bfd": {
+      "ProjectGuid": "2f419a97-a1cc-43a7-ac1f-ce7bdc7e9bfd",
+      "DisplayName": "FreakyFashionServices.BasketService",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }
