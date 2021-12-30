@@ -4,17 +4,10 @@ namespace FreakyFashionServices.BasketService.Models.DTO
 {
     public class BasketDto
     {
-        public BasketDto(int productId, int quantity)
-        {
-            ProductId = productId;
-            Quantity = quantity;
-        }
 
         public string CustomerId { get; set; }
-        public int ProductId { get; set; }
 
-        public int Quantity { get; set; }
+        public IEnumerable<Items> Items { get; set; } = new List<Items>();
 
-        
     }
 }
