@@ -4,6 +4,7 @@ using FreakyFashionServices.CatalogService.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace FreakyFashionServices.CatalogService.Controllers
 {
     [Route("api/[controller]")]
