@@ -5,7 +5,7 @@ namespace FreakyFashionServices.OrderService.Data
 {
     public class OrderServiceContext : DbContext
     {
-        public DbSet<Orders> Product { get; set; }
+        public DbSet<Orders> Orders { get; set; }
         public DbSet<OrderLine> OrderLine { get; set; }
 
         public OrderServiceContext(DbContextOptions<OrderServiceContext> options)
