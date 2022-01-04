@@ -13,6 +13,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddDbContext<OrderServiceContext>(
 options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

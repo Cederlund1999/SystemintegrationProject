@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FreakyFashionServices.OrderService.Models.Domain
+﻿namespace FreakyFashionServices.OrderService.Models.DTO
 {
-    public class OrderLine
+    public class OrderLineDto
     {
         public int OrderLineId { get; set; }
         public int ProductId { get; set; }

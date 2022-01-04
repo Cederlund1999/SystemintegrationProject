@@ -1,5 +1,6 @@
 ﻿using FreakyFashionServices.OrderService.Data;
 using FreakyFashionServices.OrderService.Models.Domain;
+using FreakyFashionServices.OrderService.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
@@ -24,16 +25,17 @@ namespace FreakyFashionServices.OrderService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder(Orders orders)
+        public async Task<IActionResult> CreateOrder(OrderDto orderDto)
         {
             var orderJson = new StringContent(
-                JsonSerializer.Serialize(orders),
+                JsonSerializer.Serialize(orderDto),
                 Encoding.UTF8,
                 Application.Json);
+
             var httpClient = httpClientFactory.CreateClient();
 
             using var httpResponseMessage =
-                await httpClient.PostAsync("http://localhost:5000/api/baskets", orderJson);
+                await httpClient.PostAsync("http://localhost:9500/api/baskets", orderJson);
             
             return Created("", null);
         }
