@@ -10,6 +10,6 @@ namespace FreakyFashionServices.OrderService.Models.DTO
 
         public string CustomerName { get; set; }
 
-        public ICollection<OrderLine> OrderLines { get; set; } = new List<OrderLine>();
+        public IEnumerable<OrderLine> OrderLines { get; set; } = new List<OrderLine>();
     }
 }

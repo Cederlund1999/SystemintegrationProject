@@ -18,6 +18,6 @@ namespace FreakyFashionServices.OrderService.Models.Domain
 
         public string CustomerName { get; set; }
 
-        public ICollection<OrderLine> OrderLines { get; set; } = new List<OrderLine>();
+        public IEnumerable<OrderLine> OrderLines { get; set; } = new List<OrderLine>();
     }
 }

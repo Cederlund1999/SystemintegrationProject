@@ -13,31 +13,45 @@ namespace FreakyFashionServices.OrderService.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-      
-        private OrderServiceContext Context { get; }
+
 
         private readonly IHttpClientFactory httpClientFactory;
 
-        public OrdersController(OrderServiceContext context, IHttpClientFactory httpClientFactory)
+        public OrdersController(IHttpClientFactory httpClientFactory)
         {
-            Context = context;
             this.httpClientFactory = httpClientFactory;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateOrder(OrderDto orderDto)
+        /*
+         {
+             "identifier": "someidentifier",
+              "customer": "John Doe"
+        }
+
+        NewOrderDto
+         */
+        [HttpPost("{customerId}")]
+        public async Task<IActionResult> CreateOrder(string customerId, OrderDto orders)
         {
             var orderJson = new StringContent(
-                JsonSerializer.Serialize(orderDto),
+                JsonSerializer.Serialize(orders),
                 Encoding.UTF8,
                 Application.Json);
 
             var httpClient = httpClientFactory.CreateClient();
 
+            // GET basket (baserat å identifier) 
             using var httpResponseMessage =
-                await httpClient.PostAsync("http://localhost:9500/api/baskets", orderJson);
+                await httpClient.PostAsync($"http://localhost:9500/api/baskets/{customerId}", orderJson);
             
-            return Created("", null);
+            // deserializera basket
+
+            // skapa order (Order), samt orderrader (OrderLine) - orderrader genereras baserat på 
+            // antal items i din basket
+
+            // spara nere i db
+
+            return Created("", orders); 
         }
     }
 }

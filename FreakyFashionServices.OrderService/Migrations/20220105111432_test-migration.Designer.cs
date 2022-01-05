@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FreakyFashionServices.OrderService.Migrations
 {
     [DbContext(typeof(OrderServiceContext))]
-    [Migration("20220104082056_clean-migration")]
-    partial class cleanmigration
+    [Migration("20220105111432_test-migration")]
+    partial class testmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,22 +26,19 @@ namespace FreakyFashionServices.OrderService.Migrations
 
             modelBuilder.Entity("FreakyFashionServices.OrderService.Models.Domain.OrderLine", b =>
                 {
-                    b.Property<int>("OrderLineId")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderLineId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
                     b.Property<int?>("OrdersOrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderLineId");
+                    b.HasKey("ProductId");
 
                     b.HasIndex("OrdersOrderId");
 

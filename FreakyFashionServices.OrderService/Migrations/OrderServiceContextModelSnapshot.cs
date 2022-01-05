@@ -24,22 +24,19 @@ namespace FreakyFashionServices.OrderService.Migrations
 
             modelBuilder.Entity("FreakyFashionServices.OrderService.Models.Domain.OrderLine", b =>
                 {
-                    b.Property<int>("OrderLineId")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderLineId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
                     b.Property<int?>("OrdersOrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderLineId");
+                    b.HasKey("ProductId");
 
                     b.HasIndex("OrdersOrderId");
 

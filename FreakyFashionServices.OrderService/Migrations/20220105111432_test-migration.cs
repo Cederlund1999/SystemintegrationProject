@@ -4,7 +4,7 @@
 
 namespace FreakyFashionServices.OrderService.Migrations
 {
-    public partial class cleanmigration : Migration
+    public partial class testmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,15 +26,14 @@ namespace FreakyFashionServices.OrderService.Migrations
                 name: "OrderLine",
                 columns: table => new
                 {
-                    OrderLineId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     OrdersOrderId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderLine", x => x.OrderLineId);
+                    table.PrimaryKey("PK_OrderLine", x => x.ProductId);
                     table.ForeignKey(
                         name: "FK_OrderLine_Orders_OrdersOrderId",
                         column: x => x.OrdersOrderId,
