@@ -7,7 +7,7 @@ namespace FreakyFashionServices.BasketService.Models.DTO
 
         public string CustomerId { get; set; }
 
-        public IEnumerable<Items> Items { get; set; } = new List<Items>();
+        public ICollection<Items> Items { get; set; }
 
     }
 }

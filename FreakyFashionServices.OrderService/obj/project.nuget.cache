@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "07EbwdjV8GKak42eXDMFeSB7qG9KmoeEg7J18KTOvlGCE1E8yGCz/hwunxIMKnh4eudW5/UFc/A1jIgxsyUgYA==",
+  "dgSpecHash": "wrGceSTdhBccEbqc5IEMoQektk1Q7v54HqX/5fPsQejPR6WyXTRfv5zewGMgOWn48tLXtpjKKs02tPocCBmqKQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Elof\\source\\repos\\FreakyFashionServices\\FreakyFashionServices.OrderService\\FreakyFashionServices.OrderService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Elof\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Elof\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\Elof\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Elof\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.1\\microsoft.entityframeworkcore.6.0.1.nupkg.sha512",

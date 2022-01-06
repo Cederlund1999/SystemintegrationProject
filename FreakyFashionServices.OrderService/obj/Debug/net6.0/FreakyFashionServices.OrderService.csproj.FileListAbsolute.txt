@@ -58,3 +58,5 @@ C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.OrderServ
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.OrderService\obj\Debug\net6.0\FreakyFashionServices.OrderService.pdb
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.OrderService\obj\Debug\net6.0\FreakyFashionServices.OrderService.genruntimeconfig.cache
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.OrderService\obj\Debug\net6.0\FreakyFashionServices.OrderService.csproj.AssemblyReference.cache
+C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.OrderService\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.OrderService\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

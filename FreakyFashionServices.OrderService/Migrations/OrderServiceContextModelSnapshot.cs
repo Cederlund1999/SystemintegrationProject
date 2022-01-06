@@ -24,42 +24,41 @@ namespace FreakyFashionServices.OrderService.Migrations
 
             modelBuilder.Entity("FreakyFashionServices.OrderService.Models.Domain.OrderLine", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("OrdersOrderId")
+                    b.Property<int?>("OrdersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("OrdersOrderId");
+                    b.HasIndex("OrdersId");
 
                     b.ToTable("OrderLine");
                 });
 
             modelBuilder.Entity("FreakyFashionServices.OrderService.Models.Domain.Orders", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
-
-                    b.Property<string>("CustomerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CustomerName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("OrderId");
+                    b.HasKey("Id");
 
                     b.ToTable("Orders");
                 });
@@ -68,7 +67,7 @@ namespace FreakyFashionServices.OrderService.Migrations
                 {
                     b.HasOne("FreakyFashionServices.OrderService.Models.Domain.Orders", null)
                         .WithMany("OrderLines")
-                        .HasForeignKey("OrdersOrderId");
+                        .HasForeignKey("OrdersId");
                 });
 
             modelBuilder.Entity("FreakyFashionServices.OrderService.Models.Domain.Orders", b =>

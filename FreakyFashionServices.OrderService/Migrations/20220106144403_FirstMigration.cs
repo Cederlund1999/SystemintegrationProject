@@ -4,7 +4,7 @@
 
 namespace FreakyFashionServices.OrderService.Migrations
 {
-    public partial class testmigration : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,39 +12,39 @@ namespace FreakyFashionServices.OrderService.Migrations
                 name: "Orders",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.OrderId);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "OrderLine",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    OrdersOrderId = table.Column<int>(type: "int", nullable: true)
+                    OrdersId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderLine", x => x.ProductId);
+                    table.PrimaryKey("PK_OrderLine", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderLine_Orders_OrdersOrderId",
-                        column: x => x.OrdersOrderId,
+                        name: "FK_OrderLine_Orders_OrdersId",
+                        column: x => x.OrdersId,
                         principalTable: "Orders",
-                        principalColumn: "OrderId");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderLine_OrdersOrderId",
+                name: "IX_OrderLine_OrdersId",
                 table: "OrderLine",
-                column: "OrdersOrderId");
+                column: "OrdersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -41,3 +41,5 @@ C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.BasketSer
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.BasketService\obj\Debug\net6.0\ref\FreakyFashionServices.BasketService.dll
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.BasketService\obj\Debug\net6.0\FreakyFashionServices.BasketService.pdb
 C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.BasketService\obj\Debug\net6.0\FreakyFashionServices.BasketService.genruntimeconfig.cache
+C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.BasketService\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Elof\source\repos\FreakyFashionServices\FreakyFashionServices.BasketService\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

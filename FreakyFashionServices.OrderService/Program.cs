@@ -1,3 +1,4 @@
+using FreakyFashionServices.OrderService;
 using FreakyFashionServices.OrderService.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddDbContext<OrderServiceContext>(
 options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 

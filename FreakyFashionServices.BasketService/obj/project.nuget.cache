@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dPhfFRgktlDfAi95pyqJBPgAHGopCh4tD+4HuP8EGTO0pH7uMK5VTbTVE0bpYVhvMQq7EEKioaPUtlsNQhD5Pg==",
+  "dgSpecHash": "kYUSo4QAZ7EsgjxrDQehjP/Vrksr7d5xNQvKufQsgcqQREbxWJ0+LlLRFXGOf5X/J+gTvDuYGH2zE/L5UnqG9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Elof\\source\\repos\\FreakyFashionServices\\FreakyFashionServices.BasketService\\FreakyFashionServices.BasketService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Elof\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Elof\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Elof\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Elof\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\6.0.1\\microsoft.extensions.caching.stackexchangeredis.6.0.1.nupkg.sha512",

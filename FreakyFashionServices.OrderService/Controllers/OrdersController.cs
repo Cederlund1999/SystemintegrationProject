@@ -1,4 +1,5 @@
-﻿using FreakyFashionServices.OrderService.Data;
+﻿using AutoMapper;
+using FreakyFashionServices.OrderService.Data;
 using FreakyFashionServices.OrderService.Models.Domain;
 using FreakyFashionServices.OrderService.Models.DTO;
 using Microsoft.AspNetCore.Http;
@@ -17,41 +18,51 @@ namespace FreakyFashionServices.OrderService.Controllers
 
         private readonly IHttpClientFactory httpClientFactory;
 
-        public OrdersController(IHttpClientFactory httpClientFactory)
+        private readonly OrderServiceContext Context;
+        private readonly IMapper mapping;
+
+
+        public OrdersController(IHttpClientFactory httpClientFactory, OrderServiceContext context, IMapper mapping)
         {
             this.httpClientFactory = httpClientFactory;
+            Context = context;
+            this.mapping = mapping; 
         }
 
-        /*
-         {
-             "identifier": "someidentifier",
-              "customer": "John Doe"
-        }
 
-        NewOrderDto
-         */
-        [HttpPost("{customerId}")]
-        public async Task<IActionResult> CreateOrder(string customerId, OrderDto orders)
+        [HttpPost]
+        public async Task<ActionResult<OrderCreatedDto>> CreateOrder(CreateOrderDto orders)
         {
-            var orderJson = new StringContent(
-                JsonSerializer.Serialize(orders),
-                Encoding.UTF8,
-                Application.Json);
 
             var httpClient = httpClientFactory.CreateClient();
 
-            // GET basket (baserat å identifier) 
-            using var httpResponseMessage =
-                await httpClient.PostAsync($"http://localhost:9500/api/baskets/{customerId}", orderJson);
-            
-            // deserializera basket
+            var httpResponse = await httpClient.GetAsync($"http://localhost:9500/api/baskets/{orders.CustomerId}");
 
-            // skapa order (Order), samt orderrader (OrderLine) - orderrader genereras baserat på 
-            // antal items i din basket
+            var response = await httpResponse.Content.ReadAsStringAsync();
 
-            // spara nere i db
+            var basketResponse = JsonSerializer.Deserialize<OrderDto>(
+                response,
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
 
-            return Created("", orders); 
+            if (basketResponse.CustomerId == null)
+                return NotFound(new { message = "no basket found on this id" });
+
+
+            var SuccessfullOrder = await Context.Orders.AddAsync(new Orders()
+            {
+                CustomerName = orders.CustomerName,
+                OrderLines = basketResponse.Items
+                .Select(x => mapping.Map<OrderLine>(x)).ToList()
+               
+            });
+
+            await Context.SaveChangesAsync();
+
+            return Created("", new OrderCreatedDto { OrderId = SuccessfullOrder.Entity.Id});
+
         }
     }
 }
