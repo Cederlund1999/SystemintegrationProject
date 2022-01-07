@@ -17,16 +17,15 @@ namespace FreakyFashionServices.OrderService.Controllers
 
 
         private readonly IHttpClientFactory httpClientFactory;
-
         private readonly OrderServiceContext Context;
-        private readonly IMapper mapping;
+        
 
 
-        public OrdersController(IHttpClientFactory httpClientFactory, OrderServiceContext context, IMapper mapping)
+        public OrdersController(IHttpClientFactory httpClientFactory, OrderServiceContext context)
         {
             this.httpClientFactory = httpClientFactory;
             Context = context;
-            this.mapping = mapping; 
+            
         }
 
 
@@ -55,7 +54,10 @@ namespace FreakyFashionServices.OrderService.Controllers
             {
                 CustomerName = orders.CustomerName,
                 OrderLines = basketResponse.Items
-                .Select(x => mapping.Map<OrderLine>(x)).ToList()
+                .Select(x => new OrderLine(
+                   x.ProductId,
+                   x.Quantity
+                   )).ToList()
                
             });
 

@@ -3,7 +3,7 @@ using FreakyFashionServices.CatalogService.Models.Domain;
 using FreakyFashionServices.CatalogService.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Text.RegularExpressions;
 
 namespace FreakyFashionServices.CatalogService.Controllers
 {
@@ -29,6 +29,8 @@ namespace FreakyFashionServices.CatalogService.Controllers
                   updateProductDto.Price,
                   updateProductDto.UrlSlug
                     );
+            products.UrlSlug = Regex.Replace(
+                updateProductDto.Name, @"\s|[-]", x => x.Value == " " ? "-" : "").ToLower();
             Context.Product.Add(products);
             Context.SaveChanges();
             return Created("",products);
